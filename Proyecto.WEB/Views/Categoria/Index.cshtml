@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Proyecto.WEB.Models.ViewModels.CategoriaViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Categorías";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<a asp-action="Create" class="btn btn-primary mb-3">Nueva Categoría</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Activo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model)
+        {
+            <tr>
+                <td>@categoria.Nombre</td>
+                <td>@categoria.Descripcion</td>
+                <td>@(categoria.Activo ? "Sí" : "No")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@categoria.IdCategoria" class="btn btn-info btn-sm">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@categoria.IdCategoria" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@categoria.IdCategoria" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

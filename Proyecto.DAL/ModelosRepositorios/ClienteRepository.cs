@@ -47,7 +47,8 @@ namespace Proyecto.DAL.ModelosRepositorios
 
         public Task<IQueryable<Cliente>> obtenerTodos()
         {
-            return Task.FromResult(_dbContext.Clientes.AsQueryable());
+            return Task.FromResult(_dbContext.Clientes.AsNoTracking().AsQueryable());
+
         }
     }
 }

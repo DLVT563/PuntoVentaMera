@@ -30,7 +30,7 @@ namespace Proyecto.DAL.ModelosRepositorios
 
         public async Task<bool> Eliminar(int id)
         {
-            var modelo = await _dbContext.Productos.FirstOrDefaultAsync(p => p.IdProducto == id);
+            var modelo = await _dbContext.Productos.FirstOrDefaultAsync(p => p.IdCategoria == id);
             if (modelo == null)
                 return false;
 

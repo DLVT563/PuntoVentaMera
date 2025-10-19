@@ -17,7 +17,7 @@ namespace Proyecto.WEB.Controllers
             _usuarioService = usuarioService;
         }
 
-        // GET: Usuarios
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var usuarios = await _usuarioService.obtenerTodos();
@@ -40,7 +40,7 @@ namespace Proyecto.WEB.Controllers
         }
 
 
-        // GET: Usuarios/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
             var usuario = await _usuarioService.obtener(id);
@@ -65,14 +65,13 @@ namespace Proyecto.WEB.Controllers
             return View(usuarioVM);
         }
 
-            // GET: Usuarios/Create
-            public IActionResult Create()
+        [HttpGet]
+        public IActionResult Create()
             {
                 ViewBag.Roles = ObtenerListaRoles();
                 return View();
             }
 
-            // POST: Usuarios/Create
             [HttpPost]
             [ValidateAntiForgeryToken]
             public async Task<IActionResult> Create(UsuarioViewModel usuarioVM)
@@ -108,7 +107,7 @@ namespace Proyecto.WEB.Controllers
                 return View(usuarioVM);
             }
 
-        // GET: Usuarios/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var usuario = await _usuarioService.obtener(id);
@@ -134,7 +133,6 @@ namespace Proyecto.WEB.Controllers
             return View(usuarioVM);
         }
 
-        // POST: Usuarios/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, UsuarioViewModel usuarioVM)
@@ -177,7 +175,7 @@ namespace Proyecto.WEB.Controllers
             return View(usuarioVM);
         }
 
-        // GET: Usuarios/Delete/5
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             var usuario = await _usuarioService.obtener(id);
@@ -201,7 +199,7 @@ namespace Proyecto.WEB.Controllers
             return View(usuarioVM);
         }
 
-        // POST: Usuarios/Delete/5
+        [HttpGet]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

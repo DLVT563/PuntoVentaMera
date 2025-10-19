@@ -10,44 +10,43 @@ namespace Proyecto.DAL.ModelosRepositorios
     public class UsuarioRepository : IGenericRepository<Usuario>
     {
         private readonly PuntoVentaContext _dbContext;
-        private readonly DbSet<Usuario> _dbSet;
 
         public UsuarioRepository(PuntoVentaContext context)
         {
             _dbContext = context;
-            _dbSet = _dbContext.Set<Usuario>();
+
         }
 
         public async Task<bool> Crear(Usuario modelo)
         {
-            await _dbSet.AddAsync(modelo);
+            await _dbContext.Usuarios.AddAsync(modelo);
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> Actualizar(Usuario modelo)
         {
-            _dbSet.Update(modelo);
+            _dbContext.Usuarios.Update(modelo);
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> Eliminar(int id)
         {
-            var modelo = await _dbSet.FindAsync(id);
+            var modelo = await _dbContext.Usuarios.FirstOrDefaultAsync(c => c.IdUsuario == id);
             if (modelo == null)
                 return false;
 
-            _dbSet.Remove(modelo);
+            _dbContext.Usuarios.Remove(modelo);
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
         public async Task<Usuario> obtener(int id)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbContext.Usuarios.FindAsync(id);
         }
 
         public Task<IQueryable<Usuario>> obtenerTodos()
         {
-            return Task.FromResult(_dbSet.AsQueryable());
+            return Task.FromResult(_dbContext.Usuarios.AsQueryable());
         }
     }
 }

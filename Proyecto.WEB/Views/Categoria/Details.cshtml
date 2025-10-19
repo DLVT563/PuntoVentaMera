@@ -1,0 +1,21 @@
+﻿@model Proyecto.WEB.Models.ViewModels.CategoriaViewModel
+
+@{
+    ViewData["Title"] = "Detalles de Categoría";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<div class="mb-3">
+    <strong>Nombre:</strong> @Model.Nombre
+</div>
+<div class="mb-3">
+    <strong>Descripción:</strong> @Model.Descripcion
+</div>
+<div class="mb-3">
+    <strong>Activo:</strong> @(Model.Activo ? "Sí" : "No")
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.IdCategoria" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

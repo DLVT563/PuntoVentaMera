@@ -1,0 +1,26 @@
+﻿@model Proyecto.WEB.Models.ViewModels.CategoriaViewModel
+
+@{
+    ViewData["Title"] = "Eliminar Categoría";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<h4>¿Estás seguro que deseas eliminar esta categoría?</h4>
+
+<div class="mb-3">
+    <strong>Nombre:</strong> @Model.Nombre
+</div>
+<div class="mb-3">
+    <strong>Descripción:</strong> @Model.Descripcion
+</div>
+<div class="mb-3">
+    <strong>Activo:</strong> @(Model.Activo ? "Sí" : "No")
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdCategoria" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
