@@ -1,0 +1,61 @@
+﻿@model Proyecto.WEB.Models.ViewModels.VentaViewModel
+
+@{
+    ViewData["Title"] = "Detalle de Venta";
+}
+
+<h2>Detalle de Venta #@Model.IdVenta</h2>
+
+<p>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Fecha:</th>
+        <td>@Model.Fecha.ToString("g")</td>
+    </tr>
+    <tr>
+        <th>Total:</th>
+        <td>@Model.Total.ToString("C")</td>
+    </tr>
+    <tr>
+        <th>Cliente:</th>
+        <td>@Model.IdCliente</td>
+    </tr>
+    <tr>
+        <th>Pagado:</th>
+        <td>@Model.Pagado</td>
+    </tr>
+    <tr>
+        <th>Fiado:</th>
+        <td>@Model.EsFiado</td>
+    </tr>
+    <tr>
+        <th>Anulado:</th>
+        <td>@Model.Anulado</td>
+    </tr>
+</table>
+
+<h3>Productos</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model.DetalleVenta)
+        {
+            <tr>
+                <td>@d.NombreProducto</td>
+                <td>@d.Cantidad</td>
+                <td>@d.PrecioUnitario.ToString("C")</td>
+                <td>@d.Subtotal.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>

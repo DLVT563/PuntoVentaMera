@@ -31,6 +31,9 @@ builder.Services.AddScoped<IProveedorService, ProveedorService>();
 builder.Services.AddScoped<IGenericRepository<Cliente>, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 
+builder.Services.AddScoped<IGenericRepository<Ventum>, VentasRepository>();
+builder.Services.AddScoped<IVentasService, VentasService>();
+
 
 
 var app = builder.Build();

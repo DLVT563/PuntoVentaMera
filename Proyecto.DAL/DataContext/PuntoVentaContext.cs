@@ -40,7 +40,13 @@ public partial class PuntoVentaContext : DbContext
 
     public virtual DbSet<Ventum> Venta { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Server=DESKTOP-VL92TI0\\SQLEXPRESS;Database=PuntoVenta;Integrated Security=True;TrustServerCertificate=True");
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -235,6 +241,8 @@ public partial class PuntoVentaContext : DbContext
 
         modelBuilder.Entity<Ventum>(entity =>
         {
+            entity.ToTable("Venta");
+
             entity.HasKey(e => e.IdVenta).HasName("PK__Venta__BC1240BDE6295B6D");
 
             entity.Property(e => e.EsFiado).HasDefaultValue(false);
@@ -256,6 +264,7 @@ public partial class PuntoVentaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Venta__IdUsuario__6E01572D");
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

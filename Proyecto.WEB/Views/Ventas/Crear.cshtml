@@ -1,0 +1,62 @@
+﻿@model Proyecto.WEB.Models.ViewModels.VentaViewModel
+
+@{
+    ViewData["Title"] = "Nueva Venta";
+}
+
+<h2>Registrar Nueva Venta</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form asp-action="Crear" method="post">
+    <div class="form-group">
+        <label asp-for="IdCliente">Cliente</label>
+        <input asp-for="IdCliente" class="form-control" />
+        <span asp-validation-for="IdCliente" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EsFiado">¿Es fiado?</label>
+        <input asp-for="EsFiado" type="checkbox" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Observaciones">Observaciones</label>
+        <textarea asp-for="Observaciones" class="form-control"></textarea>
+    </div>
+
+    <h3>Productos</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.ProductosDisponibles.Count; i++)
+            {
+                <tr>
+                    <td>@Model.ProductosDisponibles[i].Nombre</td>
+                    <td>@Model.ProductosDisponibles[i].Stock</td>
+                    <td>@Model.ProductosDisponibles[i].PrecioVenta.ToString("C")</td>
+                    <td>
+                        <input name="DetalleVenta[@i].Cantidad" type="number" min="0" max="@Model.ProductosDisponibles[i].Stock" class="form-control" />
+                        <input type="hidden" name="DetalleVenta[@i].IdProducto" value="@Model.ProductosDisponibles[i].IdProducto" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Registrar Venta</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
