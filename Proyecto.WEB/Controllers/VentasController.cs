@@ -2,6 +2,7 @@
 using Proyecto.BLL.Interfaces;
 using Proyecto.MODELS;
 using Proyecto.WEB.Models.ViewModels;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace Proyecto.WEB.Controllers
         }
 
         // =========================
-        // Listar todas las ventas
+        // Listar ventas
         // =========================
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -46,12 +47,11 @@ namespace Proyecto.WEB.Controllers
         [HttpGet]
         public async Task<IActionResult> Detalle(int id)
         {
-            var venta = await _ventasService.Obtener(id);
+            var venta = await _ventasService.ObtenerConDetalle(id);
             if (venta == null)
-            {
-                TempData["Error"] = "La venta solicitada no existe.";
                 return RedirectToAction(nameof(Index));
-            }
+
+            var historialStock = await _ventasService.ObtenerHistorialStockPorVenta(id);
 
             var ventaVM = new VentaViewModel
             {
@@ -62,6 +62,14 @@ namespace Proyecto.WEB.Controllers
                 Pagado = venta.Pagado,
                 EsFiado = venta.EsFiado,
                 Anulado = venta.Anulado,
+                NumeroVenta = venta.NumeroVenta,
+                TipoComprobante = venta.TipoComprobante,
+                Serie = venta.Serie,
+                NumeroDocumento = venta.NumeroDocumento,
+                MetodoPago = venta.MetodoPago,
+                Observaciones = venta.Observaciones,
+                SaldoPendiente = venta.SaldoPendiente,
+                FechaPagoEstimada = venta.FechaPagoEstimada,
                 DetalleVenta = venta.DetalleVenta.Select(d => new DetalleVentaViewModel
                 {
                     IdDetalle = d.IdDetalle,
@@ -70,6 +78,19 @@ namespace Proyecto.WEB.Controllers
                     Cantidad = d.Cantidad,
                     PrecioUnitario = d.PrecioUnitario,
                     Subtotal = d.Subtotal ?? 0
+                }).ToList(),
+                HistorialStock = historialStock.Select(m => new MovimientoStockViewModel
+                {
+                    IdMovimiento = m.IdMovimiento,
+                    IdProducto = m.IdProducto,
+                    NombreProducto = m.IdProductoNavigation.Nombre,
+                    Cantidad = m.Cantidad,
+                    Fecha = m.Fecha ?? DateTime.Now,
+                    Tipo = m.Tipo ?? "",
+                    Referencia = m.Referencia ?? "",
+                    Motivo = m.Motivo ?? "",
+                    IdUsuario = m.IdUsuario,
+                    NombreUsuario = m.IdUsuarioNavigation?.Nombre ?? ""
                 }).ToList()
             };
 
@@ -77,7 +98,7 @@ namespace Proyecto.WEB.Controllers
         }
 
         // =========================
-        // Formulario para crear venta
+        // Crear venta (GET)
         // =========================
         [HttpGet]
         public async Task<IActionResult> Crear()
@@ -99,16 +120,30 @@ namespace Proyecto.WEB.Controllers
             return View(ventaVM);
         }
 
-        // =========================
-        // Guardar venta usando la lógica de negocio
-        // =========================
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Crear(VentaViewModel ventaVM)
+        public async Task<IActionResult> Crear(VentaViewModel ventaVM, string DetalleVentaJson)
         {
-            if (!ModelState.IsValid)
+            // Parsear los productos agregados
+            if (string.IsNullOrEmpty(DetalleVentaJson))
             {
-                TempData["Error"] = "Datos inválidos. Revisa la información de la venta.";
+                ModelState.AddModelError("", "Debe agregar al menos un producto a la venta.");
+                var productos = await _productoService.obtenerTodos();
+                ventaVM.ProductosDisponibles = productos.Select(p => new ProductoViewModel
+                {
+                    IdProducto = p.IdProducto,
+                    Nombre = p.Nombre,
+                    PrecioVenta = p.PrecioVenta,
+                    Stock = p.Stock
+                }).ToList();
+                return View(ventaVM);
+            }
+
+            ventaVM.DetalleVenta = System.Text.Json.JsonSerializer.Deserialize<List<DetalleVentaViewModel>>(DetalleVentaJson);
+
+            if (!ModelState.IsValid || ventaVM.DetalleVenta == null || !ventaVM.DetalleVenta.Any())
+            {
                 var productos = await _productoService.obtenerTodos();
                 ventaVM.ProductosDisponibles = productos.Select(p => new ProductoViewModel
                 {
@@ -122,14 +157,27 @@ namespace Proyecto.WEB.Controllers
 
             try
             {
-             
+                // Generar valores automáticos
+                var numeroVenta = $"V-{DateTime.Now:yyyyMMddHHmmss}";
+                var serie = "A001";
+                var numeroDocumento = new Random().Next(1000, 9999).ToString();
+
                 var venta = new Ventum
                 {
-                    IdUsuario = 20, // <-- clave foránea correcta
+                    IdUsuario = 20, // reemplazar con el usuario logueado
                     IdCliente = ventaVM.IdCliente,
                     EsFiado = ventaVM.EsFiado,
                     Pagado = ventaVM.Pagado,
                     Observaciones = ventaVM.Observaciones,
+                    NumeroVenta = numeroVenta,
+                    TipoComprobante = ventaVM.TipoComprobante ?? "Factura",
+                    Serie = serie,
+                    NumeroDocumento = numeroDocumento,
+                    MetodoPago = ventaVM.MetodoPago ?? "Efectivo",
+                    Fecha = DateTime.Now,
+                    FechaPagoEstimada = ventaVM.FechaPagoEstimada,
+                    SaldoPendiente = ventaVM.EsFiado ? ventaVM.Total : 0,
+
                     DetalleVenta = ventaVM.DetalleVenta.Select(d => new DetalleVentum
                     {
                         IdProducto = d.IdProducto,
@@ -139,12 +187,10 @@ namespace Proyecto.WEB.Controllers
 
                 var ventaGuardada = await _ventasService.GuardarVenta(venta);
 
-                TempData["Exito"] = "Venta registrada correctamente.";
                 return RedirectToAction("Detalle", new { id = ventaGuardada.IdVenta });
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                TempData["Error"] = $"Error al registrar la venta: {ex.Message}";
                 var productos = await _productoService.obtenerTodos();
                 ventaVM.ProductosDisponibles = productos.Select(p => new ProductoViewModel
                 {
@@ -153,13 +199,15 @@ namespace Proyecto.WEB.Controllers
                     PrecioVenta = p.PrecioVenta,
                     Stock = p.Stock
                 }).ToList();
+                ModelState.AddModelError("", $"Error al registrar la venta: {ex.Message}");
                 return View(ventaVM);
             }
         }
 
 
+
         // =========================
-        // Anular venta usando lógica de negocio
+        // Anular venta
         // =========================
         [HttpPost]
         [ValidateAntiForgeryToken]

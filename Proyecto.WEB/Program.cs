@@ -34,6 +34,14 @@ builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IGenericRepository<Ventum>, VentasRepository>();
 builder.Services.AddScoped<IVentasService, VentasService>();
 
+builder.Services.AddScoped<IGenericRepository<Compra>, CompraRepository>();
+builder.Services.AddScoped<IGenericRepository<DetalleCompra>, DetalleCompraRepository>();
+builder.Services.AddScoped<IGenericRepository<DetalleVentum>, DetalleVentaRepository>();
+builder.Services.AddScoped<IGenericRepository<MovimientoStock>, MovimientoStockRepository>();
+builder.Services.AddScoped<IGenericRepository<PagoFiado>, PagoFiadoRepository>();
+
+
+
 
 
 var app = builder.Build();

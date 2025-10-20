@@ -1,45 +1,29 @@
 ﻿@model Proyecto.WEB.Models.ViewModels.VentaViewModel
 
 @{
-    ViewData["Title"] = "Detalle de Venta";
+    ViewData["Title"] = $"Detalle Venta #{Model.IdVenta}";
 }
 
 <h2>Detalle de Venta #@Model.IdVenta</h2>
 
-<p>
-    <a asp-action="Index" class="btn btn-secondary">Volver</a>
-</p>
+<div class="mb-3">
+    <strong>Fecha:</strong> @Model.Fecha.ToString("dd/MM/yyyy HH:mm") <br />
+    <strong>Cliente:</strong> @(Model.IdCliente) <br />
+    <strong>Total:</strong> @Model.Total.ToString("C") <br />
+    <strong>Pagado:</strong> @(Model.Pagado ? "Sí" : "No") <br />
+    <strong>Fiado:</strong> @(Model.EsFiado ? "Sí" : "No") <br />
+    <strong>Anulado:</strong> @(Model.Anulado ? "Sí" : "No") <br />
+    <strong>Observaciones:</strong> @Model.Observaciones <br />
+    <strong>Tipo de comprobante:</strong> @Model.TipoComprobante <br />
+    <strong>Serie:</strong> @Model.Serie <br />
+    <strong>Número Documento:</strong> @Model.NumeroDocumento <br />
+    <strong>Método de pago:</strong> @Model.MetodoPago <br />
+    <strong>Fecha estimada de pago:</strong> @(Model.FechaPagoEstimada.HasValue? Model.FechaPagoEstimada.Value.ToString("dd/MM/yyyy") : "N/A")
+</div>
 
-<table class="table table-bordered">
-    <tr>
-        <th>Fecha:</th>
-        <td>@Model.Fecha.ToString("g")</td>
-    </tr>
-    <tr>
-        <th>Total:</th>
-        <td>@Model.Total.ToString("C")</td>
-    </tr>
-    <tr>
-        <th>Cliente:</th>
-        <td>@Model.IdCliente</td>
-    </tr>
-    <tr>
-        <th>Pagado:</th>
-        <td>@Model.Pagado</td>
-    </tr>
-    <tr>
-        <th>Fiado:</th>
-        <td>@Model.EsFiado</td>
-    </tr>
-    <tr>
-        <th>Anulado:</th>
-        <td>@Model.Anulado</td>
-    </tr>
-</table>
-
-<h3>Productos</h3>
-<table class="table table-bordered table-striped">
-    <thead>
+<h3>Productos de la Venta</h3>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
         <tr>
             <th>Producto</th>
             <th>Cantidad</th>
@@ -48,14 +32,46 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var d in Model.DetalleVenta)
+        @foreach (var detalle in Model.DetalleVenta)
         {
             <tr>
-                <td>@d.NombreProducto</td>
-                <td>@d.Cantidad</td>
-                <td>@d.PrecioUnitario.ToString("C")</td>
-                <td>@d.Subtotal.ToString("C")</td>
+                <td>@detalle.NombreProducto</td>
+                <td>@detalle.Cantidad</td>
+                <td>@detalle.PrecioUnitario.ToString("C")</td>
+                <td>@detalle.Subtotal.ToString("C")</td>
             </tr>
         }
     </tbody>
 </table>
+
+@if (Model.HistorialStock != null && Model.HistorialStock.Any())
+{
+    <h3>Historial de Stock</h3>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Producto</th>
+                <th>Tipo</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Referencia</th>
+                <th>Motivo</th>
+                <th>Usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mov in Model.HistorialStock)
+            {
+                <tr>
+                    <td>@mov.NombreProducto</td>
+                    <td>@mov.Tipo</td>
+                    <td>@mov.Cantidad</td>
+                    <td>@mov.Fecha.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@mov.Referencia</td>
+                    <td>@mov.Motivo</td>
+                    <td>@mov.NombreUsuario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

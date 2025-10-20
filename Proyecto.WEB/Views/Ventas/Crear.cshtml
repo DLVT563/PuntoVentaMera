@@ -1,62 +1,170 @@
 ﻿@model Proyecto.WEB.Models.ViewModels.VentaViewModel
 
 @{
-    ViewData["Title"] = "Nueva Venta";
+    ViewData["Title"] = "Crear Venta";
 }
 
-<h2>Registrar Nueva Venta</h2>
-
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
+<h2>Crear Venta</h2>
+<hr />
 
 <form asp-action="Crear" method="post">
-    <div class="form-group">
-        <label asp-for="IdCliente">Cliente</label>
-        <input asp-for="IdCliente" class="form-control" />
-        <span asp-validation-for="IdCliente" class="text-danger"></span>
+    <!-- ========================= Campos principales visibles ========================= -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <label asp-for="IdCliente">Cliente</label>
+            <input asp-for="IdCliente" class="form-control" placeholder="Opcional" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="EsFiado">¿Es Fiado?</label>
+            <input asp-for="EsFiado" type="checkbox" class="form-check-input" id="esFiadoCheckbox" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="MetodoPago">Método de Pago</label>
+            <select asp-for="MetodoPago" class="form-select">
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Observaciones">Observaciones</label>
+            <input asp-for="Observaciones" class="form-control" placeholder="Opcional" />
+        </div>
     </div>
 
-    <div class="form-group">
-        <label asp-for="EsFiado">¿Es fiado?</label>
-        <input asp-for="EsFiado" type="checkbox" />
+    <!-- ========================= Comprobante y documento ========================= -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <label asp-for="TipoComprobante">Tipo Comprobante</label>
+            <select asp-for="TipoComprobante" class="form-select">
+                <option value="Factura">Factura</option>
+                <option value="Boleta">Boleta</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label asp-for="NumeroDocumento">Número Documento</label>
+            <input asp-for="NumeroDocumento" class="form-control" placeholder="Doc / RUC" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Fecha">Fecha</label>
+            <input asp-for="Fecha" type="datetime-local" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+        </div>
+        <div class="col-md-3">
+            <label asp-for="SaldoPendiente">Saldo Pendiente</label>
+            <input asp-for="SaldoPendiente" type="number" min="0" step="0.01" class="form-control" placeholder="0.00" />
+        </div>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Observaciones">Observaciones</label>
-        <textarea asp-for="Observaciones" class="form-control"></textarea>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <label asp-for="FechaPagoEstimada">Fecha Pago Estimada</label>
+            <input asp-for="FechaPagoEstimada" type="date" class="form-control" />
+        </div>
     </div>
 
-    <h3>Productos</h3>
-    <table class="table table-bordered">
+    <!-- ========================= Buscador de productos ========================= -->
+    <div class="mb-3">
+        <label>Buscar Producto</label>
+        <input id="buscarProducto" type="text" class="form-control" placeholder="Ingrese nombre del producto..." />
+        <div id="listaProductos" class="list-group mt-1"></div>
+    </div>
+
+    <hr />
+
+    <!-- ========================= Tabla dinámica de productos ========================= -->
+    <h4>Productos en la venta</h4>
+    <table class="table table-bordered" id="tablaDetalle">
         <thead>
             <tr>
                 <th>Producto</th>
-                <th>Stock</th>
-                <th>Precio</th>
                 <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+                <th>Acción</th>
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < Model.ProductosDisponibles.Count; i++)
-            {
-                <tr>
-                    <td>@Model.ProductosDisponibles[i].Nombre</td>
-                    <td>@Model.ProductosDisponibles[i].Stock</td>
-                    <td>@Model.ProductosDisponibles[i].PrecioVenta.ToString("C")</td>
-                    <td>
-                        <input name="DetalleVenta[@i].Cantidad" type="number" min="0" max="@Model.ProductosDisponibles[i].Stock" class="form-control" />
-                        <input type="hidden" name="DetalleVenta[@i].IdProducto" value="@Model.ProductosDisponibles[i].IdProducto" />
-                    </td>
-                </tr>
-            }
+            <!-- Se agregarán productos dinámicamente aquí -->
         </tbody>
     </table>
 
-    <button type="submit" class="btn btn-success">Registrar Venta</button>
+    <!-- ========================= Campos ocultos backend ========================= -->
+    <input type="hidden" id="DetalleJson" name="DetalleVentaJson" />
+    <input type="hidden" asp-for="NumeroVenta" />
+    <input type="hidden" asp-for="Serie" />
+
+    <button type="submit" class="btn btn-primary mt-3">Guardar Venta</button>
 </form>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script>
+        var productosDisponibles = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductosDisponibles));
+        var detalleVenta = [];
+
+        function actualizarTabla() {
+            var tbody = document.querySelector("#tablaDetalle tbody");
+            tbody.innerHTML = "";
+
+            detalleVenta.forEach((item, index) => {
+                var row = `<tr>
+                    <td>${item.Nombre}</td>
+                    <td><input type="number" min="1" value="${item.Cantidad}" class="form-control cantidad" data-index="${index}"/></td>
+                    <td>${item.PrecioUnitario.toFixed(2)}</td>
+                    <td>${(item.Cantidad * item.PrecioUnitario).toFixed(2)}</td>
+                    <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto(${index})">X</button></td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            document.getElementById("DetalleJson").value = JSON.stringify(detalleVenta);
+
+            document.querySelectorAll(".cantidad").forEach(input => {
+                input.addEventListener("input", function () {
+                    var idx = parseInt(this.dataset.index);
+                    detalleVenta[idx].Cantidad = parseInt(this.value) || 1;
+                    actualizarTabla();
+                });
+            });
+        }
+
+        function eliminarProducto(index) {
+            detalleVenta.splice(index, 1);
+            actualizarTabla();
+        }
+
+        document.getElementById("buscarProducto").addEventListener("input", function () {
+            var texto = this.value.toLowerCase();
+            var lista = document.getElementById("listaProductos");
+            lista.innerHTML = "";
+
+            productosDisponibles.filter(p => p.Nombre.toLowerCase().includes(texto))
+                .forEach(p => {
+                    var item = document.createElement("a");
+                    item.href = "#";
+                    item.className = "list-group-item list-group-item-action";
+                    item.textContent = `${p.Nombre} - S/${p.PrecioVenta}`;
+                    item.onclick = function () {
+                        if (!detalleVenta.some(d => d.IdProducto === p.IdProducto)) {
+                            detalleVenta.push({
+                                IdProducto: p.IdProducto,
+                                Nombre: p.Nombre,
+                                Cantidad: 1,
+                                PrecioUnitario: p.PrecioVenta
+                            });
+                            actualizarTabla();
+                        }
+                        lista.innerHTML = "";
+                        document.getElementById("buscarProducto").value = "";
+                        return false;
+                    };
+                    lista.appendChild(item);
+                });
+        });
+
+        // Generar automáticamente campos ocultos
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('input[name="NumeroVenta"]').value = `V-${new Date().toISOString().replace(/[-T:.Z]/g,'').slice(0,14)}`;
+            document.querySelector('input[name="Serie"]').value = "A001";
+        });
+    </script>
 }
