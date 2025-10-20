@@ -3,60 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\views\\ventas\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\views\\ventas\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\views\\ventas\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\views\\ventas\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\controllers\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\controllers\\ventascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2AE4785-E38C-489C-B592-1E5EB5812723}|Proyecto.BLL\\Proyecto.BLL.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.bll\\servicios\\ventasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2AE4785-E38C-489C-B592-1E5EB5812723}|Proyecto.BLL\\Proyecto.BLL.csproj|solutionrelative:proyecto.bll\\servicios\\ventasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21434350-CC80-424F-A9ED-BFC015338A9F}|Proyecto.DAL\\Proyecto.DAL.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.dal\\modelosrepositorios\\ventasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21434350-CC80-424F-A9ED-BFC015338A9F}|Proyecto.DAL\\Proyecto.DAL.csproj|solutionrelative:proyecto.dal\\modelosrepositorios\\ventasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\views\\ventas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\views\\ventas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\models\\viewmodels\\ventaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\models\\viewmodels\\ventaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.models\\ventum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|solutionrelative:proyecto.models\\ventum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.models\\movimientostock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|solutionrelative:proyecto.models\\movimientostock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.models\\detalleventum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC812F9E-72E3-4EE1-BECF-FC0E27B09F16}|Proyecto.MODELS\\Proyecto.MODELS.csproj|solutionrelative:proyecto.models\\detalleventum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\models\\viewmodels\\usuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\models\\viewmodels\\usuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21434350-CC80-424F-A9ED-BFC015338A9F}|Proyecto.DAL\\Proyecto.DAL.csproj|c:\\users\\angel\\desktop\\modeloncapas\\proyecto.dal\\datacontext\\puntoventacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21434350-CC80-424F-A9ED-BFC015338A9F}|Proyecto.DAL\\Proyecto.DAL.csproj|solutionrelative:proyecto.dal\\datacontext\\puntoventacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,188 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "Proyecto.WEB\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T04:46:03.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAYwBkAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T04:44:13.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VentasRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.DAL\\ModelosRepositorios\\VentasRepository.cs",
-              "RelativeDocumentMoniker": "Proyecto.DAL\\ModelosRepositorios\\VentasRepository.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.DAL\\ModelosRepositorios\\VentasRepository.cs",
-              "RelativeToolTip": "Proyecto.DAL\\ModelosRepositorios\\VentasRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "PuntoVentaContext.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.DAL\\DataContext\\PuntoVentaContext.cs",
+              "RelativeDocumentMoniker": "Proyecto.DAL\\DataContext\\PuntoVentaContext.cs",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.DAL\\DataContext\\PuntoVentaContext.cs",
+              "RelativeToolTip": "Proyecto.DAL\\DataContext\\PuntoVentaContext.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:31:14.305Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Crear.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Crear.cshtml",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Ventas\\Crear.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Crear.cshtml",
-              "RelativeToolTip": "Proyecto.WEB\\Views\\Ventas\\Crear.cshtml",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAgwKoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T04:21:05.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MovimientoStock.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\MovimientoStock.cs",
-              "RelativeDocumentMoniker": "Proyecto.MODELS\\MovimientoStock.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\MovimientoStock.cs",
-              "RelativeToolTip": "Proyecto.MODELS\\MovimientoStock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:14:18.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DetalleVentum.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\DetalleVentum.cs",
-              "RelativeDocumentMoniker": "Proyecto.MODELS\\DetalleVentum.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\DetalleVentum.cs",
-              "RelativeToolTip": "Proyecto.MODELS\\DetalleVentum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:14:14.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Ventum.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\Ventum.cs",
-              "RelativeDocumentMoniker": "Proyecto.MODELS\\Ventum.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.MODELS\\Ventum.cs",
-              "RelativeToolTip": "Proyecto.MODELS\\Ventum.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA9wBEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:13:59.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "VentaViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Models\\ViewModels\\VentaViewModel.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Models\\ViewModels\\VentaViewModel.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Models\\ViewModels\\VentaViewModel.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Models\\ViewModels\\VentaViewModel.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA0wCIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:13:23.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UsuarioViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Models\\ViewModels\\UsuarioViewModel.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Models\\ViewModels\\UsuarioViewModel.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Models\\ViewModels\\UsuarioViewModel.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Models\\ViewModels\\UsuarioViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:13:23.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VentasService.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.BLL\\Servicios\\VentasService.cs",
-              "RelativeDocumentMoniker": "Proyecto.BLL\\Servicios\\VentasService.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.BLL\\Servicios\\VentasService.cs",
-              "RelativeToolTip": "Proyecto.BLL\\Servicios\\VentasService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:11:14.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Program.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Program.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Program.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:07:20.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Detalle.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Detalle.cshtml",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Ventas\\Detalle.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Detalle.cshtml",
-              "RelativeToolTip": "Proyecto.WEB\\Views\\Ventas\\Detalle.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T04:05:23.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VentasController.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Controllers\\VentasController.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\VentasController.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Controllers\\VentasController.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Controllers\\VentasController.cs",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAIwM0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T04:05:21.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Index.cshtml",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Ventas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\ModeloNCapas\\Proyecto.WEB\\Views\\Ventas\\Index.cshtml",
-              "RelativeToolTip": "Proyecto.WEB\\Views\\Ventas\\Index.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAADwvxwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T04:20:08.537Z",
+              "WhenOpened": "2025-10-20T10:13:51.36Z",
               "EditorCaption": ""
             }
           ]

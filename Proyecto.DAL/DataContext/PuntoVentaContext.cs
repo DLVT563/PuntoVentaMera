@@ -214,7 +214,14 @@ public partial class PuntoVentaContext : DbContext
             entity.ToTable("Rol");
 
             entity.Property(e => e.Nombre).HasMaxLength(50);
+
+            entity.HasData(
+                new Rol { IdRol = 1, Nombre = "Administrador" },
+                new Rol { IdRol = 2, Nombre = "Vendedor" },
+                new Rol { IdRol = 3, Nombre = "Cajero" }
+            );
         });
+
 
         modelBuilder.Entity<Usuario>(entity =>
         {
