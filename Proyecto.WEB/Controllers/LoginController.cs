@@ -8,7 +8,6 @@ using Proyecto.MODELS;
 
 namespace Proyecto.WEB.Controllers
 {
-    [Authorize]
     public class LoginController : Controller
     {
         private readonly IUsuarioService _usuarioService;

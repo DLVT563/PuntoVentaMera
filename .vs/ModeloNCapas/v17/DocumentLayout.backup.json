@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F2AE4785-E38C-489C-B592-1E5EB5812723}|Proyecto.BLL\\Proyecto.BLL.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.bll\\servicios\\ventasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2AE4785-E38C-489C-B592-1E5EB5812723}|Proyecto.BLL\\Proyecto.BLL.csproj|solutionrelative:proyecto.bll\\servicios\\ventasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|solutionrelative:proyecto.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E937DE9-ECC2-43A2-87E3-E86254F2407F}|Proyecto.WEB\\Proyecto.WEB.csproj|d:\\proyectos net core\\posventa\\puntoventamera\\proyecto.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -126,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,33 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IVentasService.cs",
-              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.BLL\\Interfaces\\IVentasService.cs",
-              "RelativeDocumentMoniker": "Proyecto.BLL\\Interfaces\\IVentasService.cs",
-              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.BLL\\Interfaces\\IVentasService.cs",
-              "RelativeToolTip": "Proyecto.BLL\\Interfaces\\IVentasService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:47:09.147Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProveedorController.cs",
-              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ProveedorController.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\ProveedorController.cs",
-              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ProveedorController.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Controllers\\ProveedorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:46:51.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ProductosController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ProductosController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\ProductosController.cs",
@@ -168,12 +142,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\ProductosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:46:49.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:46:49.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\HomeController.cs",
@@ -181,12 +154,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:46:40.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:46:40.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\ClienteController.cs",
@@ -194,12 +166,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\ClienteController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:46:38.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:46:38.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
@@ -207,12 +178,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:45:41.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:45:41.198Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Models\\ViewModels\\LoginViewModel.cs",
@@ -220,12 +190,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Models\\ViewModels\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:08:31.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:08:31.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\UsuarioController.cs",
@@ -233,12 +202,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\UsuarioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:05:18.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:05:18.201Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "VentasService.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.BLL\\Servicios\\VentasService.cs",
               "RelativeDocumentMoniker": "Proyecto.BLL\\Servicios\\VentasService.cs",
@@ -259,12 +227,61 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:29:17.032Z",
+              "WhenOpened": "2025-10-27T05:29:17.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Program.cs",
+              "RelativeDocumentMoniker": "Proyecto.WEB\\Program.cs",
+              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Program.cs",
+              "RelativeToolTip": "Proyecto.WEB\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T07:51:54.025Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Proyecto.WEB\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T05:05:51.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProveedorController.cs",
+              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ProveedorController.cs",
+              "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\ProveedorController.cs",
+              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\ProveedorController.cs",
+              "RelativeToolTip": "Proyecto.WEB\\Controllers\\ProveedorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T05:46:51.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IVentasService.cs",
+              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.BLL\\Interfaces\\IVentasService.cs",
+              "RelativeDocumentMoniker": "Proyecto.BLL\\Interfaces\\IVentasService.cs",
+              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.BLL\\Interfaces\\IVentasService.cs",
+              "RelativeToolTip": "Proyecto.BLL\\Interfaces\\IVentasService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T05:47:09.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "VentasController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\VentasController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\VentasController.cs",
@@ -272,8 +289,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\VentasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:03:31.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:03:31.756Z"
             },
             {
               "$type": "Document",
@@ -285,8 +301,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Cliente\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:29:26.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:29:26.157Z"
             },
             {
               "$type": "Document",
@@ -298,8 +313,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Cliente\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:29:23.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:29:23.198Z"
             },
             {
               "$type": "Document",
@@ -311,8 +325,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:29:19.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:29:19.775Z"
             },
             {
               "$type": "Document",
@@ -324,21 +337,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Views\\Login\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T05:08:06.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\LoginController.cs",
-              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:05:51.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:08:06.943Z"
             },
             {
               "$type": "Document",
@@ -350,12 +349,11 @@
               "RelativeToolTip": "Proyecto.WEB\\Models\\ViewModels\\UsuarioViewModel.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:08:35.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:08:35.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "Proyecto.WEB\\Controllers\\CategoriaController.cs",
@@ -363,21 +361,7 @@
               "RelativeToolTip": "Proyecto.WEB\\Controllers\\CategoriaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:06:06.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Program.cs",
-              "RelativeDocumentMoniker": "Proyecto.WEB\\Program.cs",
-              "ToolTip": "D:\\Proyectos Net Core\\POSventa\\PuntoVentaMera\\Proyecto.WEB\\Program.cs",
-              "RelativeToolTip": "Proyecto.WEB\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T07:51:54.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:06:06.769Z"
             },
             {
               "$type": "Document",
@@ -389,8 +373,7 @@
               "RelativeToolTip": "Proyecto.MODELS\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:18:56.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:18:56.691Z"
             },
             {
               "$type": "Document",
@@ -402,8 +385,7 @@
               "RelativeToolTip": "Proyecto.MODELS\\Rol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:21:06.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:21:06.599Z"
             },
             {
               "$type": "Document",
@@ -415,8 +397,7 @@
               "RelativeToolTip": "Proyecto.BLL\\Interfaces\\IUsuarioService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:04:46.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:04:46.676Z"
             },
             {
               "$type": "Document",
@@ -428,8 +409,7 @@
               "RelativeToolTip": "Proyecto.BLL\\Servicios\\UsuarioService.cs",
               "ViewState": "AgIAADUAAAAAAAAAAADwv0sAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:04:43.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:04:43.049Z"
             },
             {
               "$type": "Document",
@@ -441,8 +421,7 @@
               "RelativeToolTip": "Proyecto.BLL\\Servicios\\ProductoService.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:02:12.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:02:12.443Z"
             },
             {
               "$type": "Document",
@@ -454,8 +433,7 @@
               "RelativeToolTip": "Proyecto.BLL\\Servicios\\ProveedorService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T05:02:10.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T05:02:10.087Z"
             },
             {
               "$type": "Document",
