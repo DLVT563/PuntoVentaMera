@@ -14,5 +14,6 @@ namespace Proyecto.BLL.Interfaces
         Task<bool> Eliminar(int id);
         Task<Usuario> obtener(int id);
         Task<IQueryable<Usuario>> obtenerTodos();
+        Task<Usuario?> ValidarUsuario(string nombreUsuario, string clave);
     }
 }

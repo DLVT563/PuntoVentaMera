@@ -10,3 +10,15 @@ C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.MODELS\obj\Debug\net8.0\refint\Proy
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.pdb
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.MODELS\obj\Debug\net8.0\ref\Proyecto.MODELS.dll
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\bin\Debug\net8.0\Proyecto.MODELS.deps.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\bin\Debug\net8.0\Proyecto.MODELS.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\bin\Debug\net8.0\Proyecto.MODELS.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.AssemblyInfoInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.AssemblyInfo.cs
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.csproj.CoreCompileInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\refint\Proyecto.MODELS.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\Proyecto.MODELS.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.MODELS\obj\Debug\net8.0\ref\Proyecto.MODELS.dll

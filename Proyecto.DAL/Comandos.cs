@@ -15,4 +15,8 @@ Scaffold-DbContext "Server=DESKTOP-VL92TI0\SQLEXPRESS;Database=PuntoVenta;Truste
 Add-Migration
 Update-Database
 
+
+Add-Migration POSVENTA -Project Proyecto.DAL -StartupProject Proyecto.WEB
+
+
  */

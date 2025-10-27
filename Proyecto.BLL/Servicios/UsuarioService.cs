@@ -1,11 +1,12 @@
-﻿using Proyecto.BLL.Interfaces;
-using Proyecto.DAL.Repositorio;
-using Proyecto.MODELS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Proyecto.BLL.Interfaces;
+using Proyecto.DAL.Repositorio;
+using Proyecto.MODELS;
 
 namespace Proyecto.BLL.Servicios
 {
@@ -61,6 +62,17 @@ namespace Proyecto.BLL.Servicios
         public async Task<IQueryable<Usuario>> obtenerTodos()
         {
             return await _usuarioRepositorio.obtenerTodos();
+        }
+
+        public async Task<Usuario?> ValidarUsuario(string nombreUsuario, string clave)
+        {
+            var usuarios = await _usuarioRepositorio.obtenerTodos();
+            return usuarios
+                .Include(u => u.IdRolNavigation)
+                .FirstOrDefault(u =>
+                    u.Nombre == nombreUsuario &&
+                    u.Clave == clave
+                );
         }
     }
 }

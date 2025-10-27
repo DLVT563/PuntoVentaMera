@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto.BLL.Interfaces;
 using Proyecto.MODELS;
 using Proyecto.WEB.Models;
 using Proyecto.WEB.Models.ViewModels;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Proyecto.WEB.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         private readonly IProductoService _productoService;

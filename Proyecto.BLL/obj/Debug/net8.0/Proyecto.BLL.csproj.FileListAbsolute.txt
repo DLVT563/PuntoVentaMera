@@ -16,3 +16,21 @@ C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.BLL\bin\Debug\net8.0\Proyecto.MODEL
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.csproj.AssemblyReference.cache
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.BLL\obj\Debug\net8.0\Proyecto.422354AC.Up2Date
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.BLL.deps.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.BLL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.BLL.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.DAL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.MODELS.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.DAL.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\bin\Debug\net8.0\Proyecto.MODELS.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.csproj.AssemblyReference.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.AssemblyInfoInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.AssemblyInfo.cs
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.csproj.CoreCompileInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.422354AC.Up2Date
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\refint\Proyecto.BLL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\Proyecto.BLL.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.BLL\obj\Debug\net8.0\ref\Proyecto.BLL.dll

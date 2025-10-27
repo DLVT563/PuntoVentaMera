@@ -42,10 +42,6 @@ public partial class PuntoVentaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-VL92TI0\\SQLEXPRESS;Database=PuntoVenta;Integrated Security=True;TrustServerCertificate=True");
-        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

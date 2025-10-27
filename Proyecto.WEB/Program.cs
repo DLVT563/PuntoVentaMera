@@ -5,6 +5,9 @@ using Proyecto.DAL.DataContext;
 using Proyecto.DAL.ModelosRepositorios;
 using Proyecto.DAL.Repositorio;
 using Proyecto.MODELS;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,7 +44,12 @@ builder.Services.AddScoped<IGenericRepository<MovimientoStock>, MovimientoStockR
 builder.Services.AddScoped<IGenericRepository<PagoFiado>, PagoFiadoRepository>();
 
 
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login/Login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(360);
+    });
 
 
 var app = builder.Build();
@@ -56,13 +64,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Login}/{id?}");
 
 app.Run();

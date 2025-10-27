@@ -16,3 +16,21 @@ C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.c
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.DAL\obj\Debug\net8.0\Proyecto.E7F5D5CB.Up2Date
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.genruntimeconfig.cache
 C:\Users\Angel\Desktop\ModeloNCapas\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.DAL.deps.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.DAL.runtimeconfig.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.DAL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.DAL.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.MODELS.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\bin\Debug\net8.0\Proyecto.MODELS.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.csproj.AssemblyReference.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.AssemblyInfoInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.AssemblyInfo.cs
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.csproj.CoreCompileInputs.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.sourcelink.json
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.E7F5D5CB.Up2Date
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\refint\Proyecto.DAL.dll
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.pdb
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\Proyecto.DAL.genruntimeconfig.cache
+D:\Proyectos Net Core\POSventa\PuntoVentaMera\Proyecto.DAL\obj\Debug\net8.0\ref\Proyecto.DAL.dll

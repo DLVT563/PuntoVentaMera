@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto.BLL.Interfaces;
 using Proyecto.MODELS;
 using Proyecto.WEB.Models.ViewModels;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto.WEB.Controllers
 {
+    [Authorize] 
     public class CategoriaController : Controller
     {
         private readonly ICategoriaService _categoriaService;

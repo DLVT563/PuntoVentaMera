@@ -1,9 +1,11 @@
+using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto.WEB.Models;
-using System.Diagnostics;
 
 namespace Proyecto.WEB.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

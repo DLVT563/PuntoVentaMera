@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto.BLL.Interfaces;
 using Proyecto.MODELS;
 using Proyecto.WEB.Models.ViewModels;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Proyecto.WEB.Controllers
 {
+    [Authorize]
     public class ClienteController : Controller
     {
         private readonly IClienteService _clienteService;
