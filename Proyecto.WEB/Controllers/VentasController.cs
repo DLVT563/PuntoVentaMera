@@ -9,8 +9,8 @@ using Proyecto.WEB.Models.ViewModels;
 
 namespace Proyecto.WEB.Controllers
 {
-    [Authorize]
-    public class VentasController : Controller
+
+     public class VentasController : Controller
     {
         private readonly IVentasService _ventasService;
         private readonly IProductoService _productoService;
@@ -20,10 +20,7 @@ namespace Proyecto.WEB.Controllers
             _ventasService = ventasService;
             _productoService = productoService;
         }
-
-        // =========================
-        // Listar ventas
-        // =========================
+        [Authorize(Roles = "Administrador,Vendedor")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -43,9 +40,7 @@ namespace Proyecto.WEB.Controllers
             return View(ventasVM);
         }
 
-        // =========================
-        // Detalle de venta
-        // =========================
+        [Authorize(Roles = "Administrador,Vendedor")]
         [HttpGet]
         public async Task<IActionResult> Detalle(int id)
         {
@@ -98,10 +93,7 @@ namespace Proyecto.WEB.Controllers
 
             return View(ventaVM);
         }
-
-        // =========================
-        // Crear venta (GET)
-        // =========================
+        [Authorize(Roles = "Administrador,Vendedor, Cajero")]
         [HttpGet]
         public async Task<IActionResult> Crear()
         {
@@ -122,7 +114,7 @@ namespace Proyecto.WEB.Controllers
             return View(ventaVM);
         }
 
-
+        [Authorize(Roles = "Administrador,Vendedor, Cajero")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(VentaViewModel ventaVM, string DetalleVentaJson)
@@ -161,12 +153,12 @@ namespace Proyecto.WEB.Controllers
             {
                 // Generar valores automáticos
                 var numeroVenta = $"V-{DateTime.Now:yyyyMMddHHmmss}";
-                var serie = "A001";
-                var numeroDocumento = new Random().Next(1000, 9999).ToString();
+                var serie = $"A001-{DateTime.Now:ddMMyyyy-HHmmss}";
+                var numeroDocumento = ventaVM.NumeroDocumento;
 
                 var venta = new Ventum
                 {
-                    IdUsuario = 20, // reemplazar con el usuario logueado
+                    IdUsuario = int.Parse(User.FindFirst("IdUsuario")!.Value),
                     IdCliente = ventaVM.IdCliente,
                     EsFiado = ventaVM.EsFiado,
                     Pagado = ventaVM.Pagado,
@@ -189,7 +181,7 @@ namespace Proyecto.WEB.Controllers
 
                 var ventaGuardada = await _ventasService.GuardarVenta(venta);
 
-                return RedirectToAction("Detalle", new { id = ventaGuardada.IdVenta });
+                return RedirectToAction("Ventas", "Crear");
             }
             catch (Exception ex)
             {
@@ -205,12 +197,7 @@ namespace Proyecto.WEB.Controllers
                 return View(ventaVM);
             }
         }
-
-
-
-        // =========================
-        // Anular venta
-        // =========================
+        [Authorize(Roles = "Administrador,Vendedor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Anular(int id)

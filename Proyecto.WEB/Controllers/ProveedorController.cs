@@ -9,7 +9,7 @@ using Proyecto.WEB.Models.ViewModels;
 
 namespace Proyecto.WEB.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrador")]
     public class ProveedorController : Controller
     {
         private readonly IProveedorService _proveedorService;

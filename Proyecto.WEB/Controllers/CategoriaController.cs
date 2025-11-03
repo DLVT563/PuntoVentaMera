@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto.WEB.Controllers
 {
-    [Authorize] 
+    [Authorize(Roles = "Administrador")]
     public class CategoriaController : Controller
     {
         private readonly ICategoriaService _categoriaService;

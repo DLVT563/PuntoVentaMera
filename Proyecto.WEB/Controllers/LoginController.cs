@@ -54,7 +54,7 @@ namespace Proyecto.WEB.Controllers
                 new ClaimsPrincipal(claimsIdentity),
                 properties);
 
-            return RedirectToAction("Index", "Home"); 
+            return RedirectToAction("Crear", "Ventas"); 
         }
         [HttpGet]
         public async Task<IActionResult> Logout()
