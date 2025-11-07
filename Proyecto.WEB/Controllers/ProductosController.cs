@@ -10,7 +10,7 @@ using Proyecto.WEB.Models.ViewModels;
 namespace Proyecto.WEB.Controllers
 {
     [Authorize(Roles = "Administrador, Vendedor")]
-    public class ProductosController : Controller
+    public class ProductosController : BaseController
     {
         private readonly IProductoService _productoService;
 
@@ -47,7 +47,7 @@ namespace Proyecto.WEB.Controllers
             var producto = await _productoService.obtener(id);
             if (producto == null)
             {
-                TempData["Error"] = "El producto solicitado no existe.";
+                SetNotification("El producto solicitado no existe.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -80,7 +80,7 @@ namespace Proyecto.WEB.Controllers
         {
             if (!ModelState.IsValid)
             {
-                TempData["Error"] = "Datos inválidos. Revisa la información del producto.";
+                SetNotification("Datos inválidos. Revisa la información del producto.", NotificationType.Error);
                 return View(productoVM);
             }
 
@@ -97,9 +97,9 @@ namespace Proyecto.WEB.Controllers
             };
 
             var resultado = await _productoService.Crear(producto);
-            TempData[resultado ? "Exito" : "Error"] = resultado
-                ? "Producto creado exitosamente."
-                : "Error al crear el producto.";
+            SetNotification(
+                resultado ? "Producto creado exitosamente." : "Error al crear el producto.",
+                resultado ? NotificationType.Success : NotificationType.Error);
 
             return RedirectToAction(nameof(Index));
         }
@@ -110,7 +110,7 @@ namespace Proyecto.WEB.Controllers
             var producto = await _productoService.obtener(id);
             if (producto == null)
             {
-                TempData["Error"] = "No se encontró el producto que intentas editar.";
+                SetNotification("No se encontró el producto que intentas editar.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -137,13 +137,13 @@ namespace Proyecto.WEB.Controllers
         {
             if (id != productoVM.IdProducto)
             {
-                TempData["Error"] = "El identificador del producto no coincide.";
+                SetNotification("El identificador del producto no coincide.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
             if (!ModelState.IsValid)
             {
-                TempData["Error"] = "Datos inválidos. Revisa la información del producto.";
+                SetNotification("Datos inválidos. Revisa la información del producto.", NotificationType.Error);
                 return View(productoVM);
             }
 
@@ -161,9 +161,9 @@ namespace Proyecto.WEB.Controllers
             };
 
             var resultado = await _productoService.Actualizar(producto);
-            TempData[resultado ? "Exito" : "Error"] = resultado
-                ? "Producto actualizado correctamente."
-                : "Error al actualizar el producto.";
+            SetNotification(
+                resultado ? "Producto actualizado correctamente." : "Error al actualizar el producto.",
+                resultado ? NotificationType.Success : NotificationType.Error);
 
             return RedirectToAction(nameof(Index));
         }
@@ -174,7 +174,7 @@ namespace Proyecto.WEB.Controllers
             var producto = await _productoService.obtener(id);
             if (producto == null)
             {
-                TempData["Error"] = "No se encontró el producto que intentas eliminar.";
+                SetNotification("No se encontró el producto que intentas eliminar.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -200,9 +200,9 @@ namespace Proyecto.WEB.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var resultado = await _productoService.Eliminar(id);
-            TempData[resultado ? "Exito" : "Error"] = resultado
-                ? "Producto eliminado correctamente."
-                : "Error al eliminar el producto.";
+            SetNotification(
+                resultado ? "Producto eliminado correctamente." : "Error al eliminar el producto.",
+                resultado ? NotificationType.Success : NotificationType.Error);
 
             return RedirectToAction(nameof(Index));
         }

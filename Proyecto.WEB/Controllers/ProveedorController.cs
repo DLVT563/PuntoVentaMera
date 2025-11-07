@@ -10,7 +10,7 @@ using Proyecto.WEB.Models.ViewModels;
 namespace Proyecto.WEB.Controllers
 {
     [Authorize(Roles = "Administrador")]
-    public class ProveedorController : Controller
+    public class ProveedorController : BaseController
     {
         private readonly IProveedorService _proveedorService;
 
@@ -45,7 +45,7 @@ namespace Proyecto.WEB.Controllers
             var proveedor = await _proveedorService.obtener(id);
             if (proveedor == null)
             {
-                TempData["Error"] = "El proveedor no fue encontrado.";
+                SetNotification("El proveedor no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -85,17 +85,17 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _proveedorService.Crear(proveedor);
-                    TempData["Exito"] = "Proveedor creado correctamente.";
+                    SetNotification("Proveedor creado correctamente.", NotificationType.Success);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    TempData["Error"] = $"Error al crear proveedor: {ex.Message}";
+                    SetNotification($"Error al crear proveedor: {ex.Message}", NotificationType.Error);
                 }
             }
             else
             {
-                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
             }
 
             return View(proveedorVM);
@@ -107,7 +107,7 @@ namespace Proyecto.WEB.Controllers
             var proveedor = await _proveedorService.obtener(id);
             if (proveedor == null)
             {
-                TempData["Error"] = "El proveedor no fue encontrado.";
+                SetNotification("El proveedor no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -130,7 +130,7 @@ namespace Proyecto.WEB.Controllers
         {
             if (id != proveedorVM.IdProveedor)
             {
-                TempData["Error"] = "El ID del proveedor no coincide.";
+                SetNotification("El ID del proveedor no coincide.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -148,17 +148,17 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _proveedorService.Actualizar(proveedor);
-                    TempData["Exito"] = "Proveedor actualizado correctamente.";
+                    SetNotification("Proveedor actualizado correctamente.", NotificationType.Success);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    TempData["Error"] = $"Error al actualizar proveedor: {ex.Message}";
+                    SetNotification($"Error al actualizar proveedor: {ex.Message}", NotificationType.Error);
                 }
             }
             else
             {
-                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
             }
 
             return View(proveedorVM);
@@ -170,7 +170,7 @@ namespace Proyecto.WEB.Controllers
             var proveedor = await _proveedorService.obtener(id);
             if (proveedor == null)
             {
-                TempData["Error"] = "El proveedor no fue encontrado.";
+                SetNotification("El proveedor no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -194,11 +194,11 @@ namespace Proyecto.WEB.Controllers
             try
             {
                 await _proveedorService.Eliminar(id);
-                TempData["Exito"] = "Proveedor eliminado correctamente.";
+                SetNotification("Proveedor eliminado correctamente.", NotificationType.Success);
             }
             catch (Exception ex)
             {
-                TempData["Error"] = $"Error al eliminar proveedor: {ex.Message}";
+                SetNotification($"Error al eliminar proveedor: {ex.Message}", NotificationType.Error);
             }
 
             return RedirectToAction(nameof(Index));
