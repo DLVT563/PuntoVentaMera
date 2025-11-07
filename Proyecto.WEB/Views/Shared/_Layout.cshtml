@@ -9,87 +9,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Proyecto.WEB</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Proyecto.WEB.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header class="site-header">
-        <nav class="site-nav" aria-label="Navegación principal">
-            <div class="site-nav__brand">
-                <a class="site-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto.WEB</a>
-                <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-                    <span class="sr-only">Alternar menú</span>
-                    <span aria-hidden="true">☰</span>
+    <header>
+        <nav class="navbar" aria-label="Navegación principal">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto.WEB</a>
+                <button class="navbar-toggler" type="button" aria-expanded="false" aria-controls="navbarMenu" data-nav-toggle>
+                    <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Abrir menú</span>
                 </button>
-            </div>
-            <div class="site-nav__menus" id="primary-navigation" data-nav-menu>
-                <ul class="site-nav__list">
-                    @if (User.IsInRole("Administrador"))
-                    {
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Cliente" asp-action="Index">Clientes</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Categoria" asp-action="Index">Categorías</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Productos" asp-action="Index">Productos</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Proveedor" asp-action="Index">Proveedores</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Usuarios" asp-action="Index">Usuarios</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Ventas" asp-action="Index">Ventas</a></li>
-                    }
-                    else if (User.IsInRole("Vendedor"))
-                    {
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Ventas" asp-action="Index">Ventas</a></li>
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Productos" asp-action="Index">Productos</a></li>
-                    }
-                    else if (User.IsInRole("Cajero"))
-                    {
-                        <li class="site-nav__item"><a class="site-nav__link" asp-controller="Ventas" asp-action="Crear">Registrar Venta</a></li>
-                    }
-                </ul>
-                <ul class="site-nav__list site-nav__list--secondary">
-                    <li class="site-nav__item"><a class="site-nav__link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a></li>
-                    <li class="site-nav__item"><a class="site-nav__link" asp-area="" asp-controller="Login" asp-action="Logout">Salir</a></li>
-                </ul>
+                <div class="navbar-collapse" id="navbarMenu" data-nav-menu>
+                    <ul class="navbar-nav me-auto">
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Cliente" asp-action="Index">Clientes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Categoria" asp-action="Index">Categorías</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Productos" asp-action="Index">Productos</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Proveedor" asp-action="Index">Proveedores</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Usuarios" asp-action="Index">Usuarios</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Ventas" asp-action="Index">Ventas</a></li>
+                        }
+                        else if (User.IsInRole("Vendedor"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Ventas" asp-action="Index">Ventas</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Productos" asp-action="Index">Productos</a></li>
+                        }
+                        else if (User.IsInRole("Cajero"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Ventas" asp-action="Crear">Registrar Venta</a></li>
+                        }
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Logout">Salir</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    @if (!string.IsNullOrWhiteSpace(successMessage) || !string.IsNullOrWhiteSpace(errorMessage))
-    {
-        <div class="notification-layer" aria-live="polite" aria-atomic="true">
+    <div class="container">
+        <div class="container mt-3">
             @if (!string.IsNullOrWhiteSpace(successMessage))
             {
-                <div class="notification notification--success" data-notification data-notification-type="success">
-                    <span class="notification__indicator" aria-hidden="true"></span>
-                    <div class="notification__content">
-                        <strong class="notification__title">Acción exitosa</strong>
-                        <p class="notification__message">@successMessage</p>
+                <div class="alert alert-success alert-dismissible" role="alert" data-alert>
+                    <div class="alert-content">
+                        <strong>Éxito:</strong> @successMessage
                     </div>
-                    <button class="notification__close" type="button" aria-label="Cerrar notificación" data-notification-close>
-                        ×
-                    </button>
+                    <button type="button" class="btn-close" aria-label="Cerrar notificación" data-alert-close>&times;</button>
                 </div>
             }
 
             @if (!string.IsNullOrWhiteSpace(errorMessage))
             {
-                <div class="notification notification--error" data-notification data-notification-type="error">
-                    <span class="notification__indicator" aria-hidden="true"></span>
-                    <div class="notification__content">
-                        <strong class="notification__title">Algo salió mal</strong>
-                        <p class="notification__message">@errorMessage</p>
+                <div class="alert alert-danger alert-dismissible" role="alert" data-alert>
+                    <div class="alert-content">
+                        <strong>Error:</strong> @errorMessage
                     </div>
-                    <button class="notification__close" type="button" aria-label="Cerrar notificación" data-notification-close>
-                        ×
-                    </button>
+                    <button type="button" class="btn-close" aria-label="Cerrar notificación" data-alert-close>&times;</button>
                 </div>
             }
-        </div>
-    }
 
-    <div class="app-shell">
-        <main class="app-main" role="main">
-            @RenderBody()
-        </main>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="site-footer__content">
+    <footer class="footer text-muted">
+        <div class="container">
             POS - Mera - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

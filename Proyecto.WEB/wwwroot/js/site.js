@@ -1,49 +1,69 @@
 (function () {
-    const navToggle = document.querySelector('[data-nav-toggle]');
-    const navMenu = document.querySelector('[data-nav-menu]');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            const newState = !isExpanded;
-            navToggle.setAttribute('aria-expanded', String(newState));
-            navMenu.classList.toggle('is-open', newState);
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!navMenu.classList.contains('is-open')) {
-                return;
-            }
-
-            const target = event.target;
-            if (target instanceof Element && !navMenu.contains(target) && !navToggle.contains(target)) {
-                navMenu.classList.remove('is-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
+    function ready(fn) {
+        if (document.readyState !== "loading") {
+            fn();
+        } else {
+            document.addEventListener("DOMContentLoaded", fn, { once: true });
+        }
     }
 
-    const notifications = document.querySelectorAll('[data-notification]');
+    ready(function () {
+        var toggler = document.querySelector('[data-nav-toggle]');
+        var menu = document.querySelector('[data-nav-menu]');
 
-    notifications.forEach((notification) => {
-        const closeButton = notification.querySelector('[data-notification-close]');
+        if (toggler && menu) {
+            toggler.addEventListener('click', function () {
+                var isOpen = menu.classList.toggle('is-open');
+                toggler.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
 
-        const hideNotification = () => {
-            if (notification.classList.contains('is-hidden')) {
-                return;
-            }
+            document.addEventListener('click', function (event) {
+                if (!menu.classList.contains('is-open')) {
+                    return;
+                }
 
-            notification.classList.add('is-hidden');
-            notification.addEventListener('transitionend', () => {
-                notification.remove();
-            }, { once: true });
-        };
-
-        if (closeButton) {
-            closeButton.addEventListener('click', hideNotification);
+                if (!menu.contains(event.target) && event.target !== toggler && !toggler.contains(event.target)) {
+                    menu.classList.remove('is-open');
+                    toggler.setAttribute('aria-expanded', 'false');
+                }
+            });
         }
 
-        const autoDismissMs = 6000;
-        window.setTimeout(hideNotification, autoDismissMs);
+        var alerts = document.querySelectorAll('[data-alert]');
+        alerts.forEach(function (alert) {
+            var closeButton = alert.querySelector('[data-alert-close]');
+            if (closeButton) {
+                closeButton.addEventListener('click', function () {
+                    dismissAlert(alert);
+                });
+            }
+
+            var dismissDelay = parseInt(alert.getAttribute('data-alert-timeout'), 10);
+            if (!isNaN(dismissDelay) && dismissDelay > 0) {
+                setTimeout(function () {
+                    dismissAlert(alert);
+                }, dismissDelay);
+            } else {
+                setTimeout(function () {
+                    dismissAlert(alert);
+                }, 8000);
+            }
+        });
     });
+
+    function dismissAlert(alert) {
+        if (!alert || alert.dataset.dismissed === 'true') {
+            return;
+        }
+
+        alert.dataset.dismissed = 'true';
+        alert.classList.add('is-dismissing');
+        alert.addEventListener('transitionend', function handleTransition() {
+            alert.removeEventListener('transitionend', handleTransition);
+            alert.remove();
+        });
+
+        alert.style.opacity = '0';
+        alert.style.transform = 'translateY(-6px)';
+    }
 })();
