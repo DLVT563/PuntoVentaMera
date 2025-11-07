@@ -10,7 +10,7 @@ using Proyecto.WEB.Models.ViewModels;
 namespace Proyecto.WEB.Controllers
 {
 
-     public class VentasController : Controller
+     public class VentasController : BaseController
     {
         private readonly IVentasService _ventasService;
         private readonly IProductoService _productoService;
@@ -203,9 +203,9 @@ namespace Proyecto.WEB.Controllers
         public async Task<IActionResult> Anular(int id)
         {
             bool exito = await _ventasService.AnularVenta(id);
-            TempData[exito ? "Exito" : "Error"] = exito
-                ? "Venta anulada correctamente."
-                : "No se pudo anular la venta.";
+            SetNotification(
+                exito ? "Venta anulada correctamente." : "No se pudo anular la venta.",
+                exito ? NotificationType.Success : NotificationType.Error);
 
             return RedirectToAction(nameof(Index));
         }

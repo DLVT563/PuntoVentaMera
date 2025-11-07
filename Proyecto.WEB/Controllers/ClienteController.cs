@@ -10,7 +10,7 @@ using Proyecto.WEB.Models.ViewModels;
 namespace Proyecto.WEB.Controllers
 {
     [Authorize(Roles = "Administrador, Vendedor")]
-    public class ClienteController : Controller
+    public class ClienteController : BaseController
     {
         private readonly IClienteService _clienteService;
 
@@ -44,7 +44,7 @@ namespace Proyecto.WEB.Controllers
             var cliente = await _clienteService.obtener(id);
             if (cliente == null)
             {
-                TempData["Error"] = "El cliente no fue encontrado.";
+                SetNotification("El cliente no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -84,17 +84,17 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _clienteService.Crear(cliente);
-                    TempData["Exito"] = "Cliente creado correctamente.";
+                    SetNotification("Cliente creado correctamente.", NotificationType.Success);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    TempData["Error"] = $"Error al crear cliente: {ex.Message}";
+                    SetNotification($"Error al crear cliente: {ex.Message}", NotificationType.Error);
                 }
             }
             else
             {
-                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
             }
 
             return View(clienteVM);
@@ -106,7 +106,7 @@ namespace Proyecto.WEB.Controllers
             var cliente = await _clienteService.obtener(id);
             if (cliente == null)
             {
-                TempData["Error"] = "El cliente no fue encontrado.";
+                SetNotification("El cliente no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -129,7 +129,7 @@ namespace Proyecto.WEB.Controllers
         {
             if (id != clienteVM.IdCliente)
             {
-                TempData["Error"] = "El ID del cliente no coincide.";
+                SetNotification("El ID del cliente no coincide.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -147,17 +147,17 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _clienteService.Actualizar(cliente);
-                    TempData["Exito"] = "Cliente actualizado correctamente.";
+                    SetNotification("Cliente actualizado correctamente.", NotificationType.Success);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    TempData["Error"] = $"Error al actualizar cliente: {ex.Message}";
+                    SetNotification($"Error al actualizar cliente: {ex.Message}", NotificationType.Error);
                 }
             }
             else
             {
-                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
             }
 
             return View(clienteVM);
@@ -169,7 +169,7 @@ namespace Proyecto.WEB.Controllers
             var cliente = await _clienteService.obtener(id);
             if (cliente == null)
             {
-                TempData["Error"] = "El cliente no fue encontrado.";
+                SetNotification("El cliente no fue encontrado.", NotificationType.Error);
                 return RedirectToAction(nameof(Index));
             }
 
@@ -193,11 +193,11 @@ namespace Proyecto.WEB.Controllers
             try
             {
                 await _clienteService.Eliminar(id);
-                TempData["Exito"] = "Cliente eliminado correctamente.";
+                SetNotification("Cliente eliminado correctamente.", NotificationType.Success);
             }
             catch (Exception ex)
             {
-                TempData["Error"] = $"Error al eliminar cliente: {ex.Message}";
+                SetNotification($"Error al eliminar cliente: {ex.Message}", NotificationType.Error);
             }
 
             return RedirectToAction(nameof(Index));
