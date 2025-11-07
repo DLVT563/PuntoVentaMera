@@ -1,6 +1,6 @@
 @{
-    var successMessage = TempData["Exito"] as string;
-    var errorMessage = TempData["Error"] as string;
+    var successMessage = TempData.Peek("Exito") as string;
+    var errorMessage = TempData.Peek("Error") as string;
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -16,11 +16,11 @@
         <nav class="navbar" aria-label="Navegación principal">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto.WEB</a>
-                <button class="navbar-toggler" type="button" aria-expanded="false" aria-controls="navbarMenu" data-nav-toggle>
+                <button class="navbar-toggler js-navbar-toggle" type="button" aria-expanded="false" aria-controls="navbarMenu">
                     <span class="navbar-toggler-icon" aria-hidden="true"></span>
                     <span class="sr-only">Abrir menú</span>
                 </button>
-                <div class="navbar-collapse" id="navbarMenu" data-nav-menu>
+                <div class="navbar-collapse js-navbar-menu" id="navbarMenu">
                     <ul class="navbar-nav me-auto">
                         @if (User.IsInRole("Administrador"))
                         {
@@ -58,21 +58,21 @@
         <div class="container mt-3">
             @if (!string.IsNullOrWhiteSpace(successMessage))
             {
-                <div class="alert alert-success alert-dismissible" role="alert" data-alert>
+                <div class="alert alert-success alert-dismissible js-alert" role="alert">
                     <div class="alert-content">
                         <strong>Éxito:</strong> @successMessage
                     </div>
-                    <button type="button" class="btn-close" aria-label="Cerrar notificación" data-alert-close>&times;</button>
+                    <button type="button" class="btn-close js-alert-close" aria-label="Cerrar notificación">&times;</button>
                 </div>
             }
 
             @if (!string.IsNullOrWhiteSpace(errorMessage))
             {
-                <div class="alert alert-danger alert-dismissible" role="alert" data-alert>
+                <div class="alert alert-danger alert-dismissible js-alert" role="alert">
                     <div class="alert-content">
                         <strong>Error:</strong> @errorMessage
                     </div>
-                    <button type="button" class="btn-close" aria-label="Cerrar notificación" data-alert-close>&times;</button>
+                    <button type="button" class="btn-close js-alert-close" aria-label="Cerrar notificación">&times;</button>
                 </div>
             }
 
