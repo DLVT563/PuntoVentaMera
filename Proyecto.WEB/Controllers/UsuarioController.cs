@@ -10,7 +10,7 @@ using Proyecto.WEB.Models.ViewModels;
 namespace Proyecto.WEB.Controllers
 {
     [Authorize(Roles = "Administrador")]
-    public class UsuariosController : BaseController
+    public class UsuariosController : Controller
     {
         private readonly IUsuarioService _usuarioService;
 
@@ -48,7 +48,8 @@ namespace Proyecto.WEB.Controllers
             var usuario = await _usuarioService.obtener(id);
             if (usuario == null)
             {
-                SetNotification("El usuario no fue encontrado.", NotificationType.Error);
+                TempData["Error"] = "El usuario no fue encontrado.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -92,17 +93,20 @@ namespace Proyecto.WEB.Controllers
                         };
 
                         await _usuarioService.Crear(usuario);
-                        SetNotification("Usuario creado correctamente.", NotificationType.Success);
+                        TempData["Exito"] = "Usuario creado correctamente.";
+                        TempData.Remove("Error");
                         return RedirectToAction(nameof(Index));
                     }
                     catch (Exception ex)
                     {
-                        SetNotification($"Error al crear usuario: {ex.Message}", NotificationType.Error);
+                        TempData["Error"] = $"Error al crear usuario: {ex.Message}";
+                        TempData.Remove("Exito");
                     }
                 }
                 else
                 {
-                    SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
+                    TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                    TempData.Remove("Exito");
                 }
 
                 ViewBag.Roles = ObtenerListaRoles();
@@ -115,7 +119,8 @@ namespace Proyecto.WEB.Controllers
             var usuario = await _usuarioService.obtener(id);
             if (usuario == null)
             {
-                SetNotification("El usuario no fue encontrado.", NotificationType.Error);
+                TempData["Error"] = "El usuario no fue encontrado.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -141,7 +146,8 @@ namespace Proyecto.WEB.Controllers
         {
             if (id != usuarioVM.IdUsuario)
             {
-                SetNotification("El ID del usuario no coincide.", NotificationType.Error);
+                TempData["Error"] = "El ID del usuario no coincide.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -160,17 +166,20 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _usuarioService.Actualizar(usuario);
-                    SetNotification("Usuario actualizado correctamente.", NotificationType.Success);
+                    TempData["Exito"] = "Usuario actualizado correctamente.";
+                    TempData.Remove("Error");
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    SetNotification($"Error al actualizar usuario: {ex.Message}", NotificationType.Error);
+                    TempData["Error"] = $"Error al actualizar usuario: {ex.Message}";
+                    TempData.Remove("Exito");
                 }
             }
             else
             {
-                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
+                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                TempData.Remove("Exito");
             }
 
             ViewBag.Roles = ObtenerListaRoles();
@@ -183,7 +192,8 @@ namespace Proyecto.WEB.Controllers
             var usuario = await _usuarioService.obtener(id);
             if (usuario == null)
             {
-                SetNotification("El usuario no fue encontrado.", NotificationType.Error);
+                TempData["Error"] = "El usuario no fue encontrado.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -209,11 +219,13 @@ namespace Proyecto.WEB.Controllers
             try
             {
                 await _usuarioService.Eliminar(id);
-                SetNotification("Usuario eliminado correctamente.", NotificationType.Success);
+                TempData["Exito"] = "Usuario eliminado correctamente.";
+                TempData.Remove("Error");
             }
             catch (Exception ex)
             {
-                SetNotification($"Error al eliminar usuario: {ex.Message}", NotificationType.Error);
+                TempData["Error"] = $"Error al eliminar usuario: {ex.Message}";
+                TempData.Remove("Exito");
             }
 
             return RedirectToAction(nameof(Index));

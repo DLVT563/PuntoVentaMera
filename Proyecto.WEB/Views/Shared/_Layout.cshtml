@@ -1,12 +1,12 @@
 @{
-    var notificationMessage = TempData["Notification.Message"] as string;
-    var notificationTypeRaw = TempData["Notification.Type"] as string;
-    var notificationType = notificationTypeRaw?.ToLowerInvariant() switch
-    {
-        "success" => "success",
-        "error" => "error",
-        _ => "info"
-    };
+    var successMessage = TempData["Exito"] as string;
+    var errorMessage = TempData["Error"] as string;
+    var notificationMessage = successMessage ?? errorMessage;
+    var notificationType = successMessage != null
+        ? "success"
+        : errorMessage != null
+            ? "error"
+            : null;
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -58,11 +58,11 @@
     @if (!string.IsNullOrWhiteSpace(notificationMessage))
     {
         <div class="notification-layer" aria-live="polite" aria-atomic="true">
-            <div class="notification notification--@notificationType" data-notification data-notification-type="@notificationType">
+            <div class="notification notification--@(notificationType ?? "info")" data-notification data-notification-type="@(notificationType ?? "info")">
                 <span class="notification__indicator" aria-hidden="true"></span>
                 <div class="notification__content">
                     <strong class="notification__title">
-                        @(notificationType switch
+                        @((notificationType ?? "info") switch
                         {
                             "success" => "Acción exitosa",
                             "error" => "Algo salió mal",

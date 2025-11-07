@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Proyecto.WEB.Controllers
 {
     [Authorize(Roles = "Administrador")]
-    public class CategoriaController : BaseController
+    public class CategoriaController : Controller
     {
         private readonly ICategoriaService _categoriaService;
 
@@ -43,7 +43,8 @@ namespace Proyecto.WEB.Controllers
             var categoria = await _categoriaService.obtener(id);
             if (categoria == null)
             {
-                SetNotification("La categoría no fue encontrada.", NotificationType.Error);
+                TempData["Error"] = "La categoría no fue encontrada.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -79,17 +80,20 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _categoriaService.Crear(categoria);
-                    SetNotification("Categoría creada correctamente.", NotificationType.Success);
+                    TempData["Exito"] = "Categoría creada correctamente.";
+                    TempData.Remove("Error");
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    SetNotification($"Error al crear categoría: {ex.Message}", NotificationType.Error);
+                    TempData["Error"] = $"Error al crear categoría: {ex.Message}";
+                    TempData.Remove("Exito");
                 }
             }
             else
             {
-                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
+                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                TempData.Remove("Exito");
             }
 
             return View(categoriaVM);
@@ -101,7 +105,8 @@ namespace Proyecto.WEB.Controllers
             var categoria = await _categoriaService.obtener(id);
             if (categoria == null)
             {
-                SetNotification("La categoría no fue encontrada.", NotificationType.Error);
+                TempData["Error"] = "La categoría no fue encontrada.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -122,7 +127,8 @@ namespace Proyecto.WEB.Controllers
         {
             if (id != categoriaVM.IdCategoria)
             {
-                SetNotification("El ID de la categoría no coincide.", NotificationType.Error);
+                TempData["Error"] = "El ID de la categoría no coincide.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -138,17 +144,20 @@ namespace Proyecto.WEB.Controllers
                     };
 
                     await _categoriaService.Actualizar(categoria);
-                    SetNotification("Categoría actualizada correctamente.", NotificationType.Success);
+                    TempData["Exito"] = "Categoría actualizada correctamente.";
+                    TempData.Remove("Error");
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)
                 {
-                    SetNotification($"Error al actualizar categoría: {ex.Message}", NotificationType.Error);
+                    TempData["Error"] = $"Error al actualizar categoría: {ex.Message}";
+                    TempData.Remove("Exito");
                 }
             }
             else
             {
-                SetNotification("Datos inválidos. Verifica los campos.", NotificationType.Error);
+                TempData["Error"] = "Datos inválidos. Verifica los campos.";
+                TempData.Remove("Exito");
             }
 
             return View(categoriaVM);
@@ -160,7 +169,8 @@ namespace Proyecto.WEB.Controllers
             var categoria = await _categoriaService.obtener(id);
             if (categoria == null)
             {
-                SetNotification("La categoría no fue encontrada.", NotificationType.Error);
+                TempData["Error"] = "La categoría no fue encontrada.";
+                TempData.Remove("Exito");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -182,11 +192,13 @@ namespace Proyecto.WEB.Controllers
             try
             {
                 await _categoriaService.Eliminar(id);
-                SetNotification("Categoría eliminada correctamente.", NotificationType.Success);
+                TempData["Exito"] = "Categoría eliminada correctamente.";
+                TempData.Remove("Error");
             }
             catch (Exception ex)
             {
-                SetNotification($"Error al eliminar categoría: {ex.Message}", NotificationType.Error);
+                TempData["Error"] = $"Error al eliminar categoría: {ex.Message}";
+                TempData.Remove("Exito");
             }
 
             return RedirectToAction(nameof(Index));
