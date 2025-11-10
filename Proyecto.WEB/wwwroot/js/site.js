@@ -36,7 +36,7 @@ const notificationContainer = document.getElementById('notification-container');
  */
 function showNotification(message, type = 'success', duration = 3000, hasAction = false) {
     if (!notificationContainer) {
-        console.error('Contenedor de notificaciones no encontrado.');
+        console.error("Contenedor de notificaciones no encontrado.");
         return;
     }
 
@@ -50,21 +50,21 @@ function showNotification(message, type = 'success', duration = 3000, hasAction 
 
     notificationContainer.prepend(notification);
 
-    window.setTimeout(() => {
+    setTimeout(() => {
         notification.classList.add('show');
     }, 10);
 
     const hideNotification = () => {
         notification.classList.remove('show');
 
-        window.setTimeout(() => {
+        setTimeout(() => {
             if (notificationContainer.contains(notification)) {
                 notificationContainer.removeChild(notification);
             }
         }, 400);
     };
 
-    window.setTimeout(hideNotification, duration);
+    setTimeout(hideNotification, duration);
 
     if (hasAction) {
         const actionButton = notification.querySelector('.action-button');
@@ -75,3 +75,32 @@ function showNotification(message, type = 'success', duration = 3000, hasAction 
 }
 
 window.showNotification = showNotification;
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!notificationContainer) {
+        return;
+    }
+
+    const pendingNotifications = document.querySelectorAll('[data-notification-message]');
+
+    pendingNotifications.forEach((element) => {
+        const message = element.getAttribute('data-notification-message');
+
+        if (!message) {
+            return;
+        }
+
+        const type = element.getAttribute('data-notification-type') || 'success';
+        const durationAttribute = element.getAttribute('data-notification-duration');
+        const duration = durationAttribute ? parseInt(durationAttribute, 10) : 3000;
+        const hasAction = element.hasAttribute('data-notification-action');
+
+        showNotification(message, type, duration, hasAction);
+
+        if (element.parentElement) {
+            element.parentElement.removeChild(element);
+        } else if (element.remove) {
+            element.remove();
+        }
+    });
+});

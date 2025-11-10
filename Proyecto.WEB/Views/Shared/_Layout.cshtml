@@ -1,13 +1,3 @@
-@{
-    var successMessage = TempData["Exito"] as string;
-    var errorMessage = TempData["Error"] as string;
-    var notificationMessage = successMessage ?? errorMessage;
-    var notificationType = successMessage != null
-        ? "success"
-        : errorMessage != null
-            ? "error"
-            : null;
-}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,6 +46,7 @@
     </header>
 
     <div id="notification-container" aria-live="polite" aria-atomic="true"></div>
+    @await Html.PartialAsync("_NotificationMessages")
 
     <div class="app-shell">
         <main class="app-main" role="main">
@@ -70,18 +61,6 @@
     </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @if (!string.IsNullOrWhiteSpace(notificationMessage))
-    {
-        var serializedMessage = System.Text.Json.JsonSerializer.Serialize(notificationMessage);
-        var serializedType = System.Text.Json.JsonSerializer.Serialize(notificationType ?? "success");
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                if (window.showNotification) {
-                    window.showNotification(@Html.Raw(serializedMessage), @Html.Raw(serializedType));
-                }
-            });
-        </script>
-    }
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

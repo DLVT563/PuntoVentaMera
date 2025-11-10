@@ -1,8 +1,10 @@
 ﻿@model Proyecto.WEB.Models.ViewModels.ProveedorViewModel
 
-@{
+@{ 
     ViewData["Title"] = "Crear Proveedor";
 }
+
+@await Html.PartialAsync("_NotificationMessages")
 
 <h2>Crear Proveedor</h2>
 <hr />

@@ -230,123 +230,125 @@ a:focus {
   font-size: 0.95rem;
 }
 
-/* Contenedor fijo para notificaciones flotantes */
+/* Contenedor Fijo y Universal */
 #notification-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
 }
 
-/* Estilos generales de las notificaciones */
+/* Estilos Generales para las Notificaciones */
 .notification {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  color: #fff;
-  min-width: 280px;
-  max-width: 400px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: translateX(110%);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  box-sizing: border-box;
-}
-
-.notification.success {
-  background-color: #4caf50;
-  border-left: 5px solid #388e3c;
-}
-
-.notification.error {
-  background-color: #f44336;
-  border-left: 5px solid #d32f2f;
-}
-
-.notification.success::before,
-.notification.error::before {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.notification.success::before {
-  content: "\2713";
-}
-
-.notification.error::before {
-  content: "\2717";
-}
-
-.notification.show {
-  opacity: 1;
-  transform: translateX(0);
-  animation: slideIn 0.4s ease-out forwards;
-}
-
-@keyframes slideIn {
-  0% {
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    min-width: 280px;
+    max-width: 400px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     transform: translateX(110%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
 }
 
+    /* Estilo de Notificación Exitosa */
+    .notification.success {
+        background-color: #4CAF50; /* Verde */
+        border-left: 5px solid #388E3C; /* Barra verde más oscura */
+    }
+
+    /* Estilo de Notificación de Error */
+    .notification.error {
+        background-color: #F44336; /* Rojo */
+        border-left: 5px solid #D32F2F; /* Barra roja más oscura */
+    }
+
+    /* Notificación con icono de éxito */
+    .notification.success::before {
+        content: '\2713'; /* Icono de check */
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    /* Notificación con icono de error */
+    .notification.error::before {
+        content: '\2717'; /* Icono de cruz */
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    /* Mostrar la notificación */
+    .notification.show {
+        opacity: 1;
+        transform: translateX(0); /* Aparece en la pantalla */
+        animation: slideIn 0.4s ease-out forwards; /* Animación de entrada */
+    }
+
+/* Animación de entrada de las notificaciones */
+@keyframes slideIn {
+    0% {
+        transform: translateX(110%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación para que la notificación se desvanezca cuando se oculte */
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 1;
+    }
 
-  100% {
-    opacity: 0;
-  }
+    100% {
+        opacity: 0;
+    }
 }
 
+/* Espaciado adicional en las notificaciones */
 .notification-container {
-  padding: 10px;
+    padding: 10px;
 }
 
+/* Estilos para el texto dentro de las notificaciones */
 .notification p,
 .notification .message {
-  margin: 0;
-  font-weight: bold;
-  font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
 }
 
+/* Notificación con una acción */
 .notification-action {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-.notification-action button,
-.notification .action-button {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
+    .notification-action button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
 
-.notification-action button:hover,
-.notification .action-button:hover {
-  color: #ffd700;
-}
+        .notification-action button:hover {
+            color: #FFD700; /* Color dorado en hover */
+        }
 
 .container {
   max-width: 1200px;
