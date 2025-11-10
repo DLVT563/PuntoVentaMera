@@ -1,8 +1,10 @@
 ﻿@model Proyecto.WEB.Models.ViewModels.ClienteViewModel
 
-@{
+@{ 
     ViewData["Title"] = "Crear Cliente";
 }
+
+@await Html.PartialAsync("_NotificationMessages")
 
 <h2>Registrar Cliente</h2>
 <hr />

@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Proyecto.WEB.Models.ViewModels.ProductoViewModel>
 
-@{
+@{ 
     ViewData["Title"] = "Lista de Productos";
 }
+
+@await Html.PartialAsync("_NotificationMessages")
 
 <h2>@ViewData["Title"]</h2>
 

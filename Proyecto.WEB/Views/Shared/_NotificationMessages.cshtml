@@ -1,0 +1,46 @@
+@using System.Collections.Generic
+@using System.Linq
+@{
+    const string notificationFlagKey = "__NotificationsRendered";
+    var alreadyRendered = Context.Items.ContainsKey(notificationFlagKey);
+
+    if (!alreadyRendered)
+    {
+        Context.Items[notificationFlagKey] = true;
+    }
+}
+
+@if (!alreadyRendered)
+{
+    var successMessage = TempData.Peek("Exito") as string;
+    var errorMessage = TempData.Peek("Error") as string;
+    var modelErrors = ViewData?.ModelState?.Values
+        .SelectMany(v => v.Errors)
+        .Select(e => e.ErrorMessage)
+        .Where(message => !string.IsNullOrWhiteSpace(message))
+        .ToList() ?? new List<string>();
+
+    if (!string.IsNullOrWhiteSpace(successMessage))
+    {
+        <div data-notification-message="@successMessage"
+             data-notification-type="success"
+             data-notification-duration="4000"></div>
+    }
+
+    if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div data-notification-message="@errorMessage"
+             data-notification-type="error"
+             data-notification-duration="5000"></div>
+    }
+
+    if (modelErrors.Any())
+    {
+        foreach (var modelError in modelErrors)
+        {
+            <div data-notification-message="@modelError"
+                 data-notification-type="error"
+                 data-notification-duration="5000"></div>
+        }
+    }
+}

@@ -30,7 +30,8 @@ namespace Proyecto.WEB.Controllers
 
             if (usuarioEncontrado == null)
             {
-                ViewData["Mensaje"] = "Usuario o clave incorrectos";
+                TempData["Error"] = "Usuario o clave incorrectos";
+                TempData.Remove("Exito");
                 return View();
             }
 

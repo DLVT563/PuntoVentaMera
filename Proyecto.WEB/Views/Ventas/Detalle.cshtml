@@ -1,8 +1,10 @@
 ﻿@model Proyecto.WEB.Models.ViewModels.VentaViewModel
 
-@{
+@{ 
     ViewData["Title"] = $"Detalle Venta #{Model.IdVenta}";
 }
+
+@await Html.PartialAsync("_NotificationMessages")
 
 <h2>Detalle de Venta #@Model.IdVenta</h2>
 
