@@ -55,28 +55,7 @@
         </nav>
     </header>
 
-    @if (!string.IsNullOrWhiteSpace(notificationMessage))
-    {
-        <div class="notification-layer" aria-live="polite" aria-atomic="true">
-            <div class="notification notification--@(notificationType ?? "info")" data-notification data-notification-type="@(notificationType ?? "info")">
-                <span class="notification__indicator" aria-hidden="true"></span>
-                <div class="notification__content">
-                    <strong class="notification__title">
-                        @((notificationType ?? "info") switch
-                        {
-                            "success" => "Acción exitosa",
-                            "error" => "Algo salió mal",
-                            _ => "Notificación"
-                        })
-                    </strong>
-                    <p class="notification__message">@notificationMessage</p>
-                </div>
-                <button class="notification__close" type="button" aria-label="Cerrar notificación" data-notification-close>
-                    ×
-                </button>
-            </div>
-        </div>
-    }
+    <div id="notification-container" aria-live="polite" aria-atomic="true"></div>
 
     <div class="app-shell">
         <main class="app-main" role="main">
@@ -91,6 +70,18 @@
     </footer>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @if (!string.IsNullOrWhiteSpace(notificationMessage))
+    {
+        var serializedMessage = System.Text.Json.JsonSerializer.Serialize(notificationMessage);
+        var serializedType = System.Text.Json.JsonSerializer.Serialize(notificationType ?? "success");
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (window.showNotification) {
+                    window.showNotification(@Html.Raw(serializedMessage), @Html.Raw(serializedType));
+                }
+            });
+        </script>
+    }
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

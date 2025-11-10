@@ -23,27 +23,55 @@
         });
     }
 
-    const notifications = document.querySelectorAll('[data-notification]');
-
-    notifications.forEach((notification) => {
-        const closeButton = notification.querySelector('[data-notification-close]');
-
-        const hideNotification = () => {
-            if (notification.classList.contains('is-hidden')) {
-                return;
-            }
-
-            notification.classList.add('is-hidden');
-            notification.addEventListener('transitionend', () => {
-                notification.remove();
-            }, { once: true });
-        };
-
-        if (closeButton) {
-            closeButton.addEventListener('click', hideNotification);
-        }
-
-        const autoDismissMs = 6000;
-        window.setTimeout(hideNotification, autoDismissMs);
-    });
 })();
+
+const notificationContainer = document.getElementById('notification-container');
+
+/**
+ * Muestra una notificación nativa flotante.
+ * @param {string} message - El texto del mensaje.
+ * @param {string} type - 'success' o 'error'.
+ * @param {number} duration - Tiempo en milisegundos para que desaparezca (por defecto 3000ms).
+ * @param {boolean} hasAction - Si la notificación debe tener un botón de acción.
+ */
+function showNotification(message, type = 'success', duration = 3000, hasAction = false) {
+    if (!notificationContainer) {
+        console.error('Contenedor de notificaciones no encontrado.');
+        return;
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        ${type === 'success' ? '✓' : '✗'} 
+        <span class="message">${message}</span>
+        ${hasAction ? '<button class="action-button">Cerrar</button>' : ''}
+    `;
+
+    notificationContainer.prepend(notification);
+
+    window.setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+
+    const hideNotification = () => {
+        notification.classList.remove('show');
+
+        window.setTimeout(() => {
+            if (notificationContainer.contains(notification)) {
+                notificationContainer.removeChild(notification);
+            }
+        }, 400);
+    };
+
+    window.setTimeout(hideNotification, duration);
+
+    if (hasAction) {
+        const actionButton = notification.querySelector('.action-button');
+        if (actionButton) {
+            actionButton.addEventListener('click', hideNotification);
+        }
+    }
+}
+
+window.showNotification = showNotification;
